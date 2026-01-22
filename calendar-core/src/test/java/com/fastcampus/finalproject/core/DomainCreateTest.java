@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+// Test code for creating domain entities
 public class DomainCreateTest {
 
     @Test
@@ -18,5 +19,6 @@ public class DomainCreateTest {
         final Schedule taskSchedule = Schedule.task("할일", "청소하기", LocalDateTime.now(), LocalDateTime.now(), me);
         assertEquals(taskSchedule.getScheduleType(), ScheduleType.TASK);
         assertEquals(taskSchedule.toTak().getTitle(), "할일");
+        assertEquals(taskSchedule.toTak().getDescription(), "청소하기");
     }
 }

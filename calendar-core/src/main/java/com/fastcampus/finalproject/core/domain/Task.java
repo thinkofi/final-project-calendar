@@ -19,4 +19,8 @@ public class Task {
     public String getTitle() {
         return schedule.getTitle();
     }
+
+    public String getDescription() {
+        return schedule.getDescription();
+    }
 }
