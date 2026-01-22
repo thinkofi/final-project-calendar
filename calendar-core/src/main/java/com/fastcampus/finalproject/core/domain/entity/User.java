@@ -1,17 +1,16 @@
-package com.fastcampus.finalproject.core.domain;
+package com.fastcampus.finalproject.core.domain.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @Getter
+@Table(name = "users")
+@Entity
 public class User {
 
     @Id
@@ -21,9 +20,9 @@ public class User {
     private String email;
     private String password;
     private LocalDate birthday;
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-    public User(String name, String email, String password, LocalDate birthday, LocalDateTime createdAt) {
+    public User(String name, String email, String password, LocalDate birthday) {
         this.name = name;
         this.email = email;
         this.password = password;
